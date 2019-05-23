@@ -82,7 +82,7 @@ Run the following Installation Instructions at the downloaded file location:
 
 Follow the command-line prompts to install CUDA
 
-__To install cuDNN__
+__To install cuDNN 7.5.0__
 
 Please reference to [Qiita_link](https://qiita.com/yukoba/items/4733e8602fa4acabcc35)
 
