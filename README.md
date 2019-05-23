@@ -13,6 +13,30 @@ $ deactivate
 
 $ pip install --upgrade tensorflow
 
+## OR
+
+##### for `python2`
+
+> virtualenv -p python pytorch-env
+
+##### for  `python 3`
+
+check python3 folder location
+> which python3
+
+check python3 version
+> python3 -V
+
+> virtualenv -p /usr/bin/python3 my_project
+
+to activate virtualenv
+
+> source my_project/bin/activate
+
+[learn more](https://help.dreamhost.com/hc/en-us/articles/115000695551-Installing-and-using-virtualenv-with-Python-3) about virtual env
+
+
+
 __NOTE:__ if there are missing packages errors, use
 > pip install package_name
 
@@ -42,9 +66,9 @@ tensorflow-gpu version using
 
 For current setup we installed TensorFlow-GPU = 1.13.1 , we need CUDA 10 and cuDNN 7.5
 
-__Install CUDA10.1__
+__Install CUDA10.0__
 
-nvidia-smi 410 , CUDA 10.1
+nvidia-smi 410.78 , CUDA 10.0
 
 Direct install CUDA and nvidia driver [pkg_dl_link](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1604&target_type=runfilelocal)
 - Operating System: Linux
