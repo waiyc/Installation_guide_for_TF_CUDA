@@ -90,10 +90,13 @@ __2.2 To install cuDNN 7.5.0__
 NOTE: `this is important` to install specific version of cudnn into the corresponding CUDA folder for running multiple CUDA version on your machine
 
 Install suitable cuDNN versions for each CUDA using the Library for Linux tar files
-$ tar -xzvf cudnn-8.0-linux-x64-v6.0.tgz
-$ sudo cp cuda/include/cudnn.h /usr/local/cuda-8.0/include
-$ sudo cp cuda/lib64/libcudnn* /usr/local/cuda-8.0/lib64
-$ sudo chmod a+r /usr/local/cuda-8.0/include/cudnn.h /usr/local/cuda-8.0/lib64/libcudnn*
+> tar -xzvf cudnn-8.0-linux-x64-v6.0.tgz
+
+> sudo cp cuda/include/cudnn.h /usr/local/cuda-8.0/include
+
+> sudo cp cuda/lib64/libcudnn* /usr/local/cuda-8.0/lib64
+
+> sudo chmod a+r /usr/local/cuda-8.0/include/cudnn.h /usr/local/cuda-8.0/lib64/libcudnn*
 
 Make sure to use the Library for Linux cuDNN packages (downloadable from [here](https://developer.nvidia.com/rdp/cudnn-download) and you need to register). If you use the installer to install these, they will not get installed in the correct location for each version of CUDA.
 
