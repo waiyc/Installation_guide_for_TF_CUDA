@@ -13,7 +13,7 @@ $ deactivate
 
 $ pip install --upgrade tensorflow
 
-## OR
+##### or the easier way 
 
 ##### for `python2`
 
@@ -49,9 +49,11 @@ Check tensorflow installed correctly inside virtualenv run the following after s
 
 > tensorflow.__version__
 
-### __2 Nvidia driver , CUDA and cuDNN install__
+--- 
 
-__Pre-install system check__
+### __2. Nvidia driver , CUDA and cuDNN install__
+
+__2.0 Pre-install system check__
 
 To check TensorFlow , CUDA and cuDNN configuration ( https://www.tensorflow.org/install/source#linux)
 Run the following to check each package version:
@@ -66,7 +68,7 @@ tensorflow-gpu version using
 
 For current setup we installed TensorFlow-GPU = 1.13.1 , we need CUDA 10 and cuDNN 7.5
 
-__Install CUDA10.0__
+__2.1 Install CUDA10.0__
 
 nvidia-smi 410.78 , CUDA 10.0
 
@@ -82,17 +84,20 @@ Run the following Installation Instructions at the downloaded file location:
 
 Follow the command-line prompts to install CUDA
 
-__To install cuDNN 7.5.0__
+__2.2 To install cuDNN 7.5.0__
 
-Please reference to [Qiita_link](https://qiita.com/yukoba/items/4733e8602fa4acabcc35)
+#### for install cuDNN into the specific CUDA folder 
+NOTE: `this is important` to install specific version of cudnn into the corresponding CUDA folder for running multiple CUDA version on your machine
 
-__NOTE:__ You need to change the link address and file name according to your setup
+Install suitable cuDNN versions for each CUDA using the Library for Linux tar files
+$ tar -xzvf cudnn-8.0-linux-x64-v6.0.tgz
+$ sudo cp cuda/include/cudnn.h /usr/local/cuda-8.0/include
+$ sudo cp cuda/lib64/libcudnn* /usr/local/cuda-8.0/lib64
+$ sudo chmod a+r /usr/local/cuda-8.0/include/cudnn.h /usr/local/cuda-8.0/lib64/libcudnn*
 
->echo "deb https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1604/x86_64 /" | sudo tee /etc/apt/sources.list.d/nvidia-ml.list
+Make sure to use the Library for Linux cuDNN packages (downloadable from [here](https://developer.nvidia.com/rdp/cudnn-download) and you need to register). If you use the installer to install these, they will not get installed in the correct location for each version of CUDA.
 
->sudo apt update
-
->sudo apt install libcudnn7-dev=7.5.0.56-1+cuda10.1
+You can learn more cudnn install insructions from this [link](https://medium.com/@peterjussi/multicuda-multiple-versions-of-cuda-on-one-machine-4b6ccda6faae) 
 
 ---
 
